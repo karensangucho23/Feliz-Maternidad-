@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+     <meta name="tipo_contenido"  content="text/html;" http-equiv="content-type" charset="utf-8">
+</HEAD>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maternidad Feliz</title>
+    <style>
+	.slides {
+            display: flex;
+            overflow: hidden;
+        }
+		.slide {
+            background-color: #e8cae8;
+            display: none;
+            flex: 1 0 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .slide:target {
+            display: block;
+        }
+
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-bottom: 5px solid #f8f8f8;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .slide h2 {
+            margin: 20px 0;
+        }
+
+        .slide p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Nested menu */
+        .nested-menu {
+            display: none;
+            margin-top: 20px;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .nested-menu a {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .nested-menu a:hover {
+            background-color: #333;
+        }
+
+        .slide:target .nested-menu {
+            display: block;
+        }
+		.slider {
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+      height: 300px;
+    }
+
+    .slides {
+      display: flex;
+      width: 400%;
+      animation: slide 12s infinite;
+    }
+		.slides img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0% { margin-left: 0; }
+      25% { margin-left: 0; }
+      30% { margin-left: -100%; }
+      55% { margin-left: -100%; }
+      60% { margin-left: -200%; }
+      85% { margin-left: -200%; }
+      90% { margin-left: -300%; }
+      100% { margin-left: -300%; }
+    }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f6efec;
+            color: #333;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: #fff;
+            flex: 1;
+        }
+
+        .menu {
+            display: flex;
+            justify-content:center;
+            background-color: #a89de0;
+            padding: 10px 0;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .menu a {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            text-decoration: none;
+            background-color: transparent;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            color: #fff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .menu a:hover,
+        .menu a:target {
+            background-color: #fff;
+            color: #4CAF50;
+        }
+
+        
+        /* Default slide to show if none is targeted */
+        #desayunos:target ~ .slide#desayunos,
+        #almuerzos:target ~ .slide#almuerzos,
+        #platos-tipicos:target ~ .slide#platos-tipicos,
+        #a-la-carta:target ~ .slide#a-la-carta {
+            display: block;
+        }
+
+        .slide {
+            background-color: #e8cae8;
+            display: none;
+            flex: 1 0 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .slide:target {
+            display: block;
+        }
+
+        .slide img {
+            width: 50%;
+            height: auto;
+            border-bottom: 5px solid #f8f8f8;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+
+        .slide h2 {
+            margin: 20px 0;
+        }
+
+        .slide p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Nested menu */
+        .nested-menu {
+            display: none;
+            margin-top: 20px;
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .nested-menu a {
+            display: block;
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .nested-menu a:hover {
+            background-color: #333;
+        }
+
+        .slide:target .nested-menu {
+            display: block;
+        }
+
+        /* Default slide to show if none is targeted */
+        #desayunos:target ~ .slide#desayunos,
+        #almuerzos:target ~ .slide#almuerzos,
+        #platos-tipicos:target ~ .slide#platos-tipicos,
+        #a-la-carta:target ~ .slide#a-la-carta {
+            display: block;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #a89de0;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 0 0 10px 10px;
+            margin-top: 20px;
+        }
+
+        footer .social-icons {
+            margin: 10px 0;
+        }
+
+        footer .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            color: #ddd;
+        }
+		#slider{
+		position:relative;
+		width:600px;
+		height:400px;
+		}
+		#slider img{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		display:none;
+		}
+		#slider img:first-child{
+		display:block;
+		}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<div class="slider">
+  <div class="slides">
+    <img src="https://miomectomia.com.br/wp-content/uploads/2019/03/mioma-e-fertilidade.jpg" alt="Slider 1">
+    <img src="https://babydotdot.com/wp-content/uploads/2018/09/newborn-milestones.jpg" alt="Slider 2">
+    <img src="https://static0.babygagaimages.com/wordpress/wp-content/uploads/2020/01/babynamesregret.jpg" alt="Slider 3">
+    <img src="https://www.assegur.com/totmagazine/wp-content/uploads/2021/02/disfrutar-la-maternidad.jpg" alt="Slider 4"/>
+  </div>
+</div>
+<head>
+<center><h1>Maternidad Felíz</h1>
+<center><img src="https://static.vecteezy.com/system/resources/previews/002/896/751/original/the-concept-of-family-motherhood-pregnancy-free-vector.jpg" width="150" height="150" alt="Parrilladas"></center>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="menu">
+                <a href="#desayunos">Información</a>
+                <a href="#almuerzos">Alimentación</a>
+                <a href="#platos-tipicos">Consejos</a>
+                <a href="#a-la-carta">Contacto</a>
+            </div>
+			
+
+<div class="slide" id="desayunos">
+                    
+<p>La maternidad es el proceso biológico, emocional y social que implica el embarazo, el parto y la crianza de los hijos. Es una etapa en la vida de las mujeres que conlleva una serie de cambios físicos, emocionales y psicológicos, y está asociada a una profunda responsabilidad en la crianza y el cuidado de los niños.</p>
+
+<p>A nivel biológico, la maternidad comienza con la concepción y el desarrollo del bebé dentro del útero, lo que conlleva diversas etapas como el embarazo, el parto y el postparto. Durante este proceso, la mujer experimenta transformaciones físicas y hormonales para adaptarse a las necesidades del bebé.</p>
+
+<p>Además del aspecto físico, la maternidad también implica una transformación emocional. La madre establece un vínculo afectivo con su hijo desde el embarazo, lo que se fortalece después del parto a través del contacto, la lactancia y el cuidado. La crianza, por su parte, requiere dedicación, paciencia y amor para asegurar el bienestar y desarrollo adecuado del niño.</p>
+
+<p>La maternidad, en su sentido social, también se refiere a los roles y expectativas que la sociedad asigna a las madres, incluyendo la responsabilidad de educar, cuidar, proteger y formar a los hijos para que puedan integrarse de manera saludable en la sociedad.</p>
+
+<p>En resumen, la maternidad es un proceso integral que involucra la biología, la emocionalidad y los aspectos sociales, y tiene un impacto significativo tanto en la mujer como en su hijo.</p>
+<center><img src="https://clubmamasypapas.com/media/mageplaza/blog/post/m/a/maternidad-todo-lo-que-necesitas-saber-sobre-esta-fase-de-la-vida.jpg" width="500" height="300"/></center>
+</div>
+<div class="slide" id="almuerzos">
+<p><center><h1>Alimentación</h1></center></p> 
+
+<p> La alimentación durante el embarazo y después del parto es clave para la salud tanto de la madre como del bebé.
+<center><h1>Durante del Embarazo</h1></center>
+<p>ºProteínas: Carne magra, pescado, huevos, legumbres, tofu.</p>
+<p> ºCarbohidratos complejos: Avena, arroz integral, pan y pasta integrales, papas.</p>
+<p> ºFrutas y verduras: Al menos 5 porciones al día para vitaminas, minerales y fibra.  </p>
+<p>ºLácteos o alternativas con calcio: Yogur, leche, queso, bebidas vegetales fortificadas.  </p>
+<p>ºGrasas saludables: Aguacate, frutos secos, semillas, aceite de oliva.  </p>
+<p>ºHidratación: Mínimo 2 litros de agua al día.</p>
+<p> ºÁcido fólico: Muy importante al inicio. Presente en verduras de hoja verde, legumbres, cítricos.</p>
+<p> ºHierro: Carne roja, lentejas, espinacas (mejor con vitamina C para absorberlo).</p>
+<p> ºCalcio y vitamina D: Fortalece huesos y dientes.</p>
+<p>ºOmega-3 (DHA): Fundamental para el cerebro del bebé. Pescado azul (2 veces por semana).</p>
+<p> ºYodo: Ayuda al desarrollo neurológico. Sal yodada, pescado, mariscos. </p>
+<center><h1>Evitar o limitar:</h1></center>
+<p>ºPescados con alto contenido de mercurio (pez espada, tiburón).</p>
+<p>ºCarnes o pescados crudos o mal cocidos.</p>
+<p> ºLácteos no pasteurizados.</p>
+<p> ºCafeína (no más de 200 mg/día).  </p>
+<p>ºAlcohol y tabaco (prohibidos). </p>
+<center><h1>Objetivos:</h1></center>
+<p>ºApoyar el crecimiento del bebé.</p>
+<p>ºMantener la energía y salud de la madre.</p>
+<p> ºPrevenir deficiencias nutricionales. </p>
+<center><h1>Despues del Embarazo</h1></center>
+<p>ºSeguir comiendo equilibradamente: Similar a la dieta del embarazo.</p>
+<p>ºMás calorías si amamantas: Se recomiendan 400-500 kcal extra al día.  </p>
+<p>ºBeber mucha agua: Para mantener una buena producción de leche.</p>
+<p> ºFibra y probióticos: Evitar estreñimiento (muy común postparto).</p>
+<p> ºHierro y vitamina B12: Si perdiste sangre o si estás débil.</p>
+<p> ºÁcidos grasos omega-3: Pueden pasar a la leche materna y beneficiar al bebé.</p>
+<p> ºCalcio y vitamina D: Para mantener tu masa ósea. </p>
+<center><h1>Evitar:</h1></center>
+<p>ºAlcohol (si amamantas, esperar al menos 2-3 horas por bebida).</p>
+<p> ºCafé en exceso (puede irritar al bebé si está en la leche).</p>
+<p> ºAlimentos muy procesados, fritos, o azúcares en exceso. </p>
+<center><h1>Objetivos:</h1></center>
+<p>ºRecuperar energía.</p>
+<p>ºApoyar la producción de leche materna.</p>
+<p> ºReponer nutrientes perdidos.</p>
+</div>
+<div class="slide" id="platos-tipicos"> 
+ <h1><p>Consejos</p></h1>
+  
+      <p>1. Cuida tu salud física y emocional</p>
+      <p>2. Fomenta una relación afectiva con tu bebé</p>
+      <p>3. Aprende a gestionar las expectativas</p>
+      <p>4. Prioriza tu bienestar</p>
+      <p>5. Busca una red de apoyo</p>
+      <p>6. Practica la paciencia y la flexibilidad</p>
+      <p>7. Cuida de tu vida social y pareja</p>
+      <p>8. Acepta los cambios y disfruta de cada momento</p>       
+      <h1><p>Ventajas </p></h1>                                            
+      <p>Vínculo emocional con el hijo</p>
+      <p>Crecimiento personal</p>
+      <p>Satisfacción y felicidad</p>
+      <p>Fortalecimiento de la familia</p>
+      <p>Sentido de propósito</p>
+      <p>Desarrollo de nuevas habilidades</p>
+	  <h1><p>Desventajas </p></h1>
+	  <p>Estrés y agotamiento</p>
+      <p>Pérdida de tiempo personal</p>
+      <p>Impacto en la carrera profesional</p>
+      <p>Cambio en la dinámica de pareja</p>
+      <p>Presión social y expectativas</p>
+      <p>Desafíos financieros</p>
+	  
+	 </div>
+                <div class="slide" id="a-la-carta">
+                   <h2>Contacto</h2>
+        <p>Si tienes dudas o necesitas ayuda, contáctanos.</p>
+		<p>Puedes también contactaron a nuestro Número de WhatsApp 0985264494</p>
+		<img src="logo Maternidad.jpg" alt="ecu" width="200" height="200">
+		</div>
+                       
+                   
+</div>
+</div>
+</div>
+
+
+<footer>
+<p>© 2025 Maternidad Feliz - Todos los derechos reservados.</p>
+<p>Síguenos en nuestras redes sociales:</p>
+<div class="social-icons">
+<a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+<a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+<a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+</div>
+</footer>
+</div>
+
+</body>
+
+</html>
